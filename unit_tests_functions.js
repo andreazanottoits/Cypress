@@ -114,8 +114,13 @@ export const addKey = (obj, key, value) => {
  *  }
  * }
  */
-export const addAddressToUser = (user) => {
-  // TODO
+
+export const addAddress = (user) => {
+  user.address = {
+    street: "Via Udine",
+    street_number: "12",
+  };
+  return user;
 };
 
 /** EXERCISE 8
@@ -124,8 +129,13 @@ export const addAddressToUser = (user) => {
  *
  * output: {a: 1, b: 2, c: 3}
  */
+
 export const zipObjects = (keys, values) => {
-  // TODO
+  let obj = {};
+  for (let i = 0; i < keys.length; i++) {
+    obj[keys[i]] = values[i];
+  }
+  return obj;
 };
 
 /**
@@ -144,6 +154,15 @@ export const zipObjects = (keys, values) => {
  *  sum: 36
  * }
  */
+
 export const dummyFunctionsComposition = (keys, values, valueToAdd) => {
-  // TODO
+  let obj = {};
+  let sum = 0;
+  for (let i = 0; i < keys.length; i++) {
+    obj[keys[i]] = values[i];
+    sum = sum + values[i];
+  }
+  obj.newValue = valueToAdd;
+  sum = sum + valueToAdd;
+  obj.sum = sum;
 };
