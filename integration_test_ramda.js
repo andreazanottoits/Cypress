@@ -112,5 +112,5 @@ export const sumObjValues = (obj) => {
  *
  */
 export const addKey = (object, value, path) => {
-  // TODO
+    return R.assocPath(path.split("."), value, object);
 };

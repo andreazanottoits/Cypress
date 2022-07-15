@@ -156,13 +156,8 @@ export const zipObjects = (keys, values) => {
  */
 
 export const dummyFunctionsComposition = (keys, values, valueToAdd) => {
-  let obj = {};
-  let sum = 0;
-  for (let i = 0; i < keys.length; i++) {
-    obj[keys[i]] = values[i];
-    sum = sum + values[i];
-  }
+  let obj = zipObjects(keys, values);
   obj.newValue = valueToAdd;
-  sum = sum + valueToAdd;
-  obj.sum = sum;
+  obj.sum = sumNumbersInArray(values);
+  return obj;
 };
